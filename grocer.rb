@@ -54,11 +54,11 @@ end
 
 def checkout(cart, coupons)
   total = 0
-  cart = consolidate_cart(cart)
-  cart = apply_coupons(cart, coupons)
-  cart = apply_clearance(cart)
+  c = consolidate_cart(cart)
+  c = apply_coupons(c, coupons)
+  c = apply_clearance(c)
   binding.pry
-  cart.each do |item, info|
+  c.each do |item, info|
     if info[:count] == 0 
       binding.pry 
     end
