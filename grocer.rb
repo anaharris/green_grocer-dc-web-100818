@@ -59,6 +59,9 @@ def checkout(cart, coupons)
   cart = apply_clearance(cart)
   binding.pry
   cart.each do |item, info|
+    if info[:count] == 0 
+      binding.pry 
+    end
     if info[:count] > 0 
       total += info[:price]
     end
